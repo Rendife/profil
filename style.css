@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --yellow: #ffb703;
+  --orange: #fb8500;
+  --white: #fff9f0;
+  --text: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  scroll-behavior: smooth;
+  background-color: var(--white);
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--yellow);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header.shrink {
+  background: var(--orange);
+  padding: 8px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--yellow);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.typing-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.cta-btn {
+  background: white;
+  color: var(--orange);
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: var(--orange);
+  color: white;
+  transform: scale(1.05);
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  margin: 30px auto 0;
+  border-radius: 50%;
+  background: white url('https://via.placeholder.com/120') center/cover;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Section Styles */
+.section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.white-bg {
+  background: var(--white);
+}
+
+.yellow-bg {
+  background: var(--yellow);
+  color: white;
+}
+
+.orange-bg {
+  background: var(--orange);
+  color: white;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: white;
+  color: var(--text);
+  padding: 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.timeline li {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 60px;
+}
+
+.timeline .year {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+/* Contact */
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+  background: var(--yellow);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* Floating Shapes */
+.floating-shape {
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: -1;
+  animation: float 8s infinite ease-in-out;
+}
+
+.floating-shape.yellow {
+  background: var(--yellow);
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 10%;
+}
+
+.floating-shape.orange {
+  background: var(--orange);
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  right: 15%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Progress Bar */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--orange);
+  width: 0%;
+  z-index: 9999;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-section {
+    padding: 80px 10%;
+  }
+}
